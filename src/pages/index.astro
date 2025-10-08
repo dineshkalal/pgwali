@@ -1,50 +1,199 @@
----
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
----
-
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Home Boys PG • Navrangpura, Ahmedabad</title>
+  <meta name="description" content="Happy Home Boys PG — Affordable, homely boys' paying guest (PG) in Navrangpura, Ahmedabad. 3-time healthy meals, unlimited Wi‑Fi, great connectivity near metro." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#0f766e; /* teal */
+      --muted:#6b7280;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --radius:14px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.45}
+    header{background:linear-gradient(90deg, rgba(15,118,110,0.06), rgba(15,118,110,0.03));backdrop-filter:blur(4px);}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    /* Nav */
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0891b2);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0}
+    nav a{color:var(--accent);text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:#fff;padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:40px 0}
+    .hero h1{font-size:32px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 20px}
+    .features{display:flex;gap:12px;flex-wrap:wrap}
+    .feature{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06);min-width:160px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+    .gallery img{width:100%;height:110px;object-fit:cover;border-radius:8px}
+
+    /* Info */
+    .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}
+    .list{margin:0;padding-left:18px;color:var(--muted)}
+
+    footer{padding:30px 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+    }
+    @media (max-width:520px){
+      .gallery img{height:90px}
+      .logo{width:48px;height:48px}
+      .hero h1{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">HH</div>
+        <div>
+          <div style="font-weight:700">Happy Home Boys PG</div>
+          <div style="font-size:13px;color:var(--muted)">Navrangpura, Ahmedabad</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#contact">Book a Room</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Happy Home Boys PG — Affordable & Homely</h1>
+        <p>Ahmedabad's best budget boys' PG in the heart of the city, Navrangpura. Well-connected (near metro), homely environment, 3-time healthy meals, unlimited Wi‑Fi and more.</p>
+
+        <div class="features">
+          <div class="feature">
+            <strong>Homely Environment</strong>
+            <div style="font-size:13px;color:var(--muted)">Clean rooms, friendly staff, safe atmosphere.</div>
+          </div>
+          <div class="feature">
+            <strong>3 Healthy Meals</strong>
+            <div style="font-size:13px;color:var(--muted)">Nutritious, home-cooked style breakfast, lunch & dinner.</div>
+          </div>
+          <div class="feature">
+            <strong>Unlimited Wi‑Fi</strong>
+            <div style="font-size:13px;color:var(--muted)">High-speed connection for study and streaming.</div>
+          </div>
+          <div class="feature">
+            <strong>Great Location</strong>
+            <div style="font-size:13px;color:var(--muted)">Near metro, markets and colleges in Navrangpura.</div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:12px">
+          <a class="cta" href="#contact">Enquire Now</a>
+          <a style="text-decoration:none;padding:10px 14px;border-radius:10px;border:1px solid rgba(15,118,110,0.12);font-weight:600" href="#gallery">See Photos</a>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-top:0">Quick Info</h3>
+        <p style="margin:6px 0;color:var(--muted)">Type: Boys Paying Guest (PG)</p>
+        <p style="margin:6px 0;color:var(--muted)">Location: Navrangpura, Ahmedabad</p>
+        <p style="margin:6px 0;color:var(--muted)">Rooms: Single / Double sharing available</p>
+        <p style="margin:6px 0;color:var(--muted)"><strong>Price:</strong> Best in budget — contact for rates</p>
+        <div style="margin-top:12px">
+          <a class="cta" href="#contact" style="display:inline-block">Call / WhatsApp</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="gallery">
+      <h2 style="margin-bottom:8px">Gallery</h2>
+      <div class="gallery card" style="padding:12px">
+        <img src="https://source.unsplash.com/collection/190727/800x600" alt="Room sample">
+        <img src="https://source.unsplash.com/collection/190728/800x600" alt="Dining area">
+        <img src="https://source.unsplash.com/collection/190729/800x600" alt="Common area">
+      </div>
+    </section>
+
+    <section id="services" style="margin-top:20px">
+      <h2>What we provide</h2>
+      <div class="two-cols">
+        <div class="card">
+          <h3 style="margin-top:0">Essentials</h3>
+          <ul class="list">
+            <li>3-time healthy home-style meals</li>
+            <li>Unlimited high-speed Wi‑Fi</li>
+            <li>Laundry service (optional)</li>
+            <li>Housekeeping and staff support</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Safety & Convenience</h3>
+          <ul class="list">
+            <li>24/7 security and gated entry</li>
+            <li>Power backup and clean water supply</li>
+            <li>Close to metro station, shops and colleges</li>
+            <li>Flexible stay durations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="card">
+        <h2 style="margin-top:0">About Happy Home</h2>
+        <p style="color:var(--muted)">Happy Home Boys PG is designed to give students and young professionals a comfortable, affordable and secure place to stay while they study or work in Ahmedabad. Located in Navrangpura, it offers excellent connectivity — close to the metro and in the heart of the city.</p>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:20px">
+      <div class="card">
+        <h2 style="margin-top:0">Contact & Booking</h2>
+        <p style="color:var(--muted)">Reach out for current room availability and pricing.</p>
+        <form onsubmit="alert('This is a demo form — wire it to your backend to collect enquiries.');return false;" style="display:grid;gap:10px;max-width:560px">
+          <input type="text" name="name" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid #e6eef0">
+          <input type="tel" name="phone" placeholder="Phone / WhatsApp" required style="padding:10px;border-radius:8px;border:1px solid #e6eef0">
+          <input type="email" name="email" placeholder="Email (optional)" style="padding:10px;border-radius:8px;border:1px solid #e6eef0">
+          <textarea name="message" placeholder="Message / preferred move-in date" rows="3" style="padding:10px;border-radius:8px;border:1px solid #e6eef0"></textarea>
+          <div style="display:flex;gap:10px">
+            <button class="cta" type="submit">Send Enquiry</button>
+            <a href="tel:+91" style="display:inline-flex;align-items:center;padding:10px 14px;border-radius:10px;border:1px solid rgba(15,118,110,0.12);text-decoration:none">Call</a>
+          </div>
+        </form>
+
+        <div style="margin-top:18px;color:var(--muted)">
+          <strong>Address:</strong> Navrangpura, Ahmedabad<br>
+          <strong>Email:</strong> info@happyhomepg.example
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div style="font-weight:600">© Happy Home Boys PG</div>
+      <div style="color:var(--muted);font-size:13px">Located in Navrangpura — Best budget PG in Ahmedabad</div>
+    </div>
+  </footer>
+
+</body>
 </html>
