@@ -1,222 +1,770 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Happy Home Boys PG | Navrangpura, Ahmedabad</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Happy Home PG Group | Boys & Girls PGs in Ahmedabad</title>
+<meta name="description" content="4 PGs across Ahmedabad — Happy Home Boys PG (Navrangpura), Giriraj Boys PG (Gulbai Tekra), Happy Home Girls PG (Mithakali), Liberty Boys PG (Mithakali). Homely food, Wi-Fi, safety." />
+<link rel="canonical" href="https://pgwali.com/" />
 
-<meta name="description"
-content="Happy Home Boys PG in Navrangpura, Ahmedabad. Affordable boys PG with homely food, Wi-Fi, safe environment and excellent connectivity." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Happy Home PG Group | Ahmedabad" />
+<meta property="og:description" content="4 PGs across Ahmedabad for students & professionals — homely food, Wi-Fi, 24x7 security." />
+<meta property="og:image" content="https://pgwali.com/pg1.jpeg" />
+<meta property="og:url" content="https://pgwali.com/" />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Happy Home PG Group",
+  "url": "https://pgwali.com/",
+  "subOrganization": [
+    {"@type":"LodgingBusiness","name":"Happy Home Boys PG","address":{"@type":"PostalAddress","addressLocality":"Navrangpura, Ahmedabad","addressRegion":"Gujarat","addressCountry":"IN"}},
+    {"@type":"LodgingBusiness","name":"Giriraj Boys PG","address":{"@type":"PostalAddress","addressLocality":"Gulbai Tekra, off CG Road, Ahmedabad","addressRegion":"Gujarat","addressCountry":"IN"}},
+    {"@type":"LodgingBusiness","name":"Happy Home Girls PG","address":{"@type":"PostalAddress","addressLocality":"Mithakali Six Road, Navrangpura, Ahmedabad","addressRegion":"Gujarat","addressCountry":"IN"}},
+    {"@type":"LodgingBusiness","name":"Liberty Boys PG","address":{"@type":"PostalAddress","addressLocality":"Mithakali, Ahmedabad","addressRegion":"Gujarat","addressCountry":"IN"}}
+  ]
+}
+</script>
 
 <style>
-:root{
-  --accent:#0f766e;
-  --bg:#f8fafc;
-  --card:#ffffff;
-  --muted:#6b7280;
-  --radius:14px;
-  font-family:'Inter',system-ui;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:#0f172a;line-height:1.5}
-.container{max-width:1100px;margin:auto;padding:24px}
-.card{background:var(--card);padding:20px;border-radius:var(--radius);
-box-shadow:0 10px 30px rgba(0,0,0,.08)}
-h1,h2,h3{margin-top:0}
+  :root{
+    --indigo-deep:#1B2A4A;
+    --indigo-mid:#28395F;
+    --paper:#F7F1E4;
+    --paper-2:#FBF7EE;
+    --mustard:#E4A930;
+    --mustard-deep:#C98A1B;
+    --clay:#B5563C;
+    --ink:#241F19;
+    --ink-soft:#4B4436;
+    --sage:#6E8B6A;
+    --radius:14px;
+    --shadow:0 12px 30px rgba(27,42,74,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Work Sans', sans-serif;color:var(--ink);background:var(--paper-2);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Fraunces', serif;line-height:1.1;margin:0 0 .4em;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  .eyebrow{font-family:'Space Mono', monospace;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--mustard-deep);font-weight:700;}
 
-/* Header */
-header{position:sticky;top:0;z-index:100;background:#fff;
-box-shadow:0 2px 12px rgba(0,0,0,.06)}
-.nav{display:flex;align-items:center;justify-content:space-between}
-.logo{
-  width:50px;height:50px;border-radius:12px;
-  background:linear-gradient(135deg,var(--accent),#0891b2);
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-weight:700
-}
-nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0}
-nav a{text-decoration:none;color:var(--accent);font-weight:600}
-.cta{
-  background:var(--accent);color:#fff;padding:10px 16px;
-  border-radius:10px;text-decoration:none;font-weight:600
-}
+  /* view routing */
+  .view{display:none;}
+  .view.active{display:block;}
 
-/* Hero */
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;margin-top:20px}
-.hero img{width:100%;border-radius:var(--radius);height:320px;object-fit:cover}
+  /* NAV */
+  header.site-nav{position:sticky;top:0;z-index:50;background:rgba(27,42,74,0.96);backdrop-filter:blur(6px);color:#fff;}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1120px;margin:0 auto;gap:16px;}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;}
+  .brand-mark{width:40px;height:40px;border-radius:50%;background:var(--mustard);color:var(--indigo-deep);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;flex-shrink:0;}
+  .brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;}
+  .brand-sub{font-size:.72rem;color:#C9D2E4;font-family:'Work Sans';}
+  .nav-cta{display:flex;gap:10px;align-items:center;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-weight:600;font-size:.88rem;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;border:1px solid transparent;white-space:nowrap;cursor:pointer;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-call{background:var(--mustard);color:var(--indigo-deep);}
+  .btn-call:hover{box-shadow:0 8px 18px rgba(228,169,48,0.35);}
+  .btn-whatsapp{background:#25D366;color:#0b3d1f;}
+  .btn-whatsapp:hover{box-shadow:0 8px 18px rgba(37,211,102,0.35);}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,0.4);}
+  .btn-back{background:transparent;color:var(--indigo-deep);border-color:var(--indigo-deep);font-size:.85rem;padding:8px 16px;}
 
-/* Sections */
-section{margin-top:50px}
-.rooms,.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  section{padding:74px 0;}
+  .section-head{max-width:640px;margin-bottom:36px;}
+  .section-head h2{font-size:2rem;color:var(--indigo-deep);margin-top:.3em;}
+  .section-head p{color:var(--ink-soft);font-size:1rem;line-height:1.6;}
 
-/* Gallery */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px}
+  /* HOME HERO */
+  .hero{background:radial-gradient(circle at 85% 15%, rgba(228,169,48,0.16), transparent 45%), linear-gradient(180deg, var(--indigo-deep) 0%, var(--indigo-mid) 100%);color:#fff;padding:64px 0 70px;text-align:center;}
+  .hero h1{font-size:2.3rem;color:#fff;}
+  .hero h1 em{font-style:italic;color:var(--mustard);}
+  @media(min-width:640px){.hero h1{font-size:3rem;}}
+  .hero p.lede{font-size:1.08rem;color:#D7DEEE;max-width:56ch;margin:16px auto 0;}
 
-/* Footer */
-footer{text-align:center;padding:30px;color:var(--muted)}
+  /* PROPERTY GRID (card layout) */
+  .prop-section{background:var(--paper);}
+  .prop-grid{display:grid;gap:28px;grid-template-columns:1fr;}
+  @media(min-width:640px){.prop-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1000px){.prop-grid{grid-template-columns:repeat(4,1fr);}}
+  .prop-card{
+    display:block;text-decoration:none;color:var(--ink);
+    background:var(--paper-2);border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:transform .2s ease, box-shadow .2s ease;
+    border:1px solid rgba(27,42,74,0.06);
+  }
+  .prop-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(27,42,74,0.25);}
+  .prop-photo{position:relative;height:170px;overflow:hidden;background:var(--paper);}
+  .prop-photo img, .prop-photo svg{width:100%;height:100%;object-fit:cover;}
+  .gender-tag{
+    position:absolute;top:12px;left:12px;
+    font-family:'Space Mono',monospace;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    padding:5px 11px;border-radius:999px;color:#fff;
+  }
+  .gender-tag.boys{background:var(--indigo-deep);}
+  .gender-tag.girls{background:var(--clay);}
+  .prop-body{padding:18px 18px 20px;}
+  .prop-body h3{font-size:1.15rem;color:var(--indigo-deep);margin-bottom:6px;}
+  .prop-loc{display:flex;gap:6px;align-items:flex-start;font-size:.85rem;color:var(--ink-soft);margin-bottom:14px;font-family:'Space Mono',monospace;}
+  .prop-cta{font-size:.85rem;font-weight:600;color:var(--mustard-deep);display:flex;align-items:center;gap:6px;}
+  .prop-cta .arrow{transition:transform .2s ease;}
+  .prop-card:hover .prop-cta .arrow{transform:translateX(4px);}
 
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  nav ul{display:none}
-  .gallery{grid-template-columns:repeat(2,1fr)}
-}
+  /* dummy dorm illustration */
+  .dummy-illus{display:block;width:100%;height:100%;}
+
+  /* ABOUT (shared style used in details) */
+  .about{background:var(--paper);}
+  .about-grid{display:grid;gap:40px;grid-template-columns:1fr;}
+  @media(min-width:880px){.about-grid{grid-template-columns:1fr 1fr;align-items:center;}}
+  .about-copy p{line-height:1.75;color:var(--ink-soft);font-size:1.02rem;margin-bottom:14px;}
+  .about-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);height:320px;}
+  .about-photo img, .about-photo svg{height:100%;width:100%;object-fit:cover;}
+
+  /* detail hero banner */
+  .detail-hero{background:linear-gradient(180deg, var(--indigo-deep) 0%, var(--indigo-mid) 100%);color:#fff;padding:40px 0 50px;}
+  .detail-hero .wrap{display:flex;flex-direction:column;gap:10px;}
+  .detail-hero h1{color:#fff;font-size:2.1rem;}
+  .detail-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:#C9D2E4;font-family:'Space Mono',monospace;font-size:.82rem;}
+  .detail-meta .gender-tag{position:static;}
+  .detail-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;}
+
+  /* ROOM KEY-TAG CARDS */
+  .rooms{background:var(--indigo-deep);color:#fff;}
+  .rooms .section-head h2{color:#fff;}
+  .rooms .section-head p{color:#C9D2E4;}
+  .room-grid{display:grid;gap:34px;grid-template-columns:1fr;}
+  @media(min-width:760px){.room-grid{grid-template-columns:repeat(3,1fr);}}
+  .keytag{position:relative;background:var(--paper-2);border-radius:16px;padding:22px 20px 26px;color:var(--ink);box-shadow:0 18px 40px rgba(0,0,0,0.3);transform:rotate(var(--tilt,0deg));transition:transform .25s ease;}
+  .keytag:nth-child(1){--tilt:-2deg;}
+  .keytag:nth-child(2){--tilt:1.4deg;}
+  .keytag:nth-child(3){--tilt:-1deg;}
+  .keytag:hover{transform:rotate(0deg) translateY(-6px);}
+  .keytag .hole{width:20px;height:20px;border-radius:50%;background:var(--indigo-deep);margin:0 auto 12px;box-shadow:inset 0 2px 4px rgba(0,0,0,0.4);position:relative;}
+  .keytag .hole::after{content:"";position:absolute;top:-26px;left:50%;transform:translateX(-50%);width:2px;height:26px;background:rgba(255,255,255,0.35);}
+  .keytag img, .keytag svg{width:100%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:14px;}
+  .keytag .label{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:4px;}
+  .keytag h3{font-size:1.25rem;color:var(--indigo-deep);}
+  .keytag p{color:var(--ink-soft);font-size:.92rem;line-height:1.5;margin:6px 0 0;}
+
+  /* FACILITIES */
+  .facilities{background:var(--paper);}
+  .fac-grid{display:grid;gap:26px;grid-template-columns:1fr;}
+  @media(min-width:760px){.fac-grid{grid-template-columns:repeat(3,1fr);}}
+  .fac-card{background:var(--paper-2);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow);border-top:4px solid var(--mustard);}
+  .fac-card:nth-child(2){border-top-color:var(--sage);}
+  .fac-card:nth-child(3){border-top-color:var(--clay);}
+  .fac-card h3{font-size:1.15rem;color:var(--indigo-deep);margin-bottom:10px;}
+  .fac-card ul{margin:0;padding-left:1.1em;color:var(--ink-soft);line-height:1.8;font-size:.95rem;}
+  .fac-card .tbc{color:var(--ink-soft);font-size:.9rem;font-style:italic;}
+
+  /* GALLERY */
+  .gallery{background:var(--indigo-mid);}
+  .gallery .section-head h2, .gallery .section-head p{color:#fff;}
+  .gallery .section-head p{color:#C9D2E4;}
+  .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  @media(min-width:640px){.gal-grid{grid-template-columns:repeat(3,1fr);}}
+  .gal-grid img, .gal-grid svg{height:170px;width:100%;object-fit:cover;border-radius:10px;transition:transform .3s ease, filter .3s ease;filter:saturate(0.95);}
+  .gal-grid a:hover img, .gal-grid a:hover svg{transform:scale(1.04);filter:saturate(1.1);}
+
+  /* CONTACT */
+  .contact{background:var(--paper);}
+  .contact-grid{display:grid;gap:36px;grid-template-columns:1fr;}
+  @media(min-width:880px){.contact-grid{grid-template-columns:1fr 1fr;}}
+  .contact-card{background:var(--paper-2);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);}
+  .contact-row{display:flex;gap:12px;align-items:center;margin-bottom:16px;font-size:1rem;}
+  .contact-row .ico{width:38px;height:38px;border-radius:50%;background:var(--indigo-deep);color:var(--mustard);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;}
+  .contact-row a{text-decoration:none;color:var(--ink);font-weight:600;}
+  .map-frame{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:0;}
+  .map-frame iframe{width:100%;height:320px;border:0;display:block;}
+
+  .placeholder-note{
+    background:#FFF6E0;border:1px dashed var(--mustard-deep);color:var(--ink-soft);
+    padding:12px 16px;border-radius:10px;font-size:.85rem;margin-bottom:30px;
+  }
+
+  footer{background:var(--indigo-deep);color:#C9D2E4;padding:30px 0;font-size:.88rem;}
+  .footer-inner{display:flex;flex-direction:column;gap:8px;align-items:flex-start;}
+  @media(min-width:640px){.footer-inner{flex-direction:row;justify-content:space-between;align-items:center;}}
+  footer a{color:var(--mustard);text-decoration:none;}
+
+  .float-whatsapp{position:fixed;bottom:22px;right:22px;z-index:60;background:#25D366;color:#0b3d1f;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,0.35);font-size:1.5rem;text-decoration:none;}
+
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;}html{scroll-behavior:auto;}}
 </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="container nav">
-    <div style="display:flex;gap:12px;align-items:center">
-      <div class="logo">HH</div>
-      <div>
-        <strong>Happy Home Boys PG</strong><br>
-        <small>Navrangpura, Ahmedabad</small>
-      </div>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#home">
+      <span class="brand-mark">HH</span>
+      <span>
+        <span class="brand-name" style="display:block;">Happy Home PG Group</span>
+        <span class="brand-sub">4 PGs across Ahmedabad</span>
+      </span>
+    </a>
+    <div class="nav-cta">
+      <a class="btn btn-call" href="tel:9636484074">📞 Call</a>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#rooms">Rooms</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <a class="cta" href="tel:9636484074">Call 9636484074</a>
   </div>
 </header>
 
-<main class="container">
+<!-- ============ HOME VIEW ============ -->
+<main id="view-home" class="view active">
 
-<!-- HOME -->
-<section id="home" class="hero">
-  <div>
-    <h1>Affordable & Homely Boys PG in Ahmedabad</h1>
-    <p style="color:var(--muted)">
-      Happy Home Boys PG offers a comfortable, safe and budget-friendly
-      stay for students and working professionals in Navrangpura.
-    </p>
-    <p>
-      ✔ 3-time home-style meals<br>
-      ✔ Unlimited Wi-Fi<br>
-      ✔ Peaceful study environment<br>
-      ✔ Excellent city connectivity
-    </p>
-    <a class="cta" href="#contact">Enquire Now</a>
-  </div>
-  <img src="/pg1.jpeg" alt="Happy Home Boys PG Room">
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="card">
-    <h2>About Happy Home Boys PG</h2>
-    <p>
-      Happy Home Boys PG is designed to provide a homely and disciplined
-      living environment for students and professionals coming to Ahmedabad.
-      Located in the prime area of Navrangpura, the PG is close to colleges,
-      metro stations, markets and major business areas.
-    </p>
-    <p>
-      Our focus is on cleanliness, healthy food, safety and comfort so that
-      residents can concentrate on studies and work without worries.
-    </p>
-  </div>
-</section>
-
-<!-- ROOMS -->
-<section id="rooms">
-  <h2>Room Options</h2>
-  <div class="rooms">
-    <div class="card">
-      <img src="/1share.jpeg" alt="Single Occupancy Room"
-           style="width:100%;height:150px;object-fit:cover;border-radius:10px">
-      <h3>Single Occupancy</h3>
-      <p>Ideal for students who prefer privacy and a quiet study space.</p>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Boys &amp; Girls PGs · Ahmedabad</span>
+      <h1>Four homes across the city, <em>one</em> homely standard.</h1>
+      <p class="lede">Happy Home, Giriraj and Liberty PGs offer safe, comfortable and budget-friendly stays for students and working professionals in Navrangpura, Gulbai Tekra and Mithakali. Pick a PG below to see rooms, facilities and location.</p>
     </div>
-    <div class="card">
-      <img src="/2share.jpeg" alt="Double Sharing Room"
-           style="width:100%;height:150px;object-fit:cover;border-radius:10px">
-      <h3>Double Sharing</h3>
-      <p>Comfortable and economical option for friends or classmates.</p>
-    </div>
-    <div class="card">
-      <img src="/3share.jpeg" alt="Triple Sharing Room"
-           style="width:100%;height:150px;object-fit:cover;border-radius:10px">
-      <h3>Triple Sharing</h3>
-      <p>Budget-friendly rooms with all essential facilities.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- SERVICES -->
-<section id="services">
-  <h2>Facilities & Services</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Food & Living</h3>
-      <ul>
-        <li>3-time home-style meals</li>
-        <li>RO drinking water</li>
-        <li>Daily housekeeping</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Connectivity</h3>
-      <ul>
-        <li>Unlimited high-speed Wi-Fi</li>
-        <li>Near metro & bus routes</li>
-        <li>Close to colleges</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Safety</h3>
-      <ul>
-        <li>24×7 security</li>
-        <li>Safe & disciplined environment</li>
-        <li>Power backup</li>
-      </ul>
-    </div>
-  </div>
-</section>
+  <section class="prop-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Our PGs</span>
+        <h2>Choose your PG</h2>
+        <p>Tap a card to see photos, room options, facilities and the exact location on the map.</p>
+      </div>
 
-<!-- GALLERY -->
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery card">
-    <img src="/1share.jpeg" alt="PG Room Photo 1">
-    <img src="/2share.jpeg" alt="PG Room Photo 2">
-    <img src="/3share.jpeg" alt="PG Room Photo 3">
-    <img src="/1share.jpeg" alt="PG Room Photo 4">
-    <img src="/2share.jpeg" alt="PG Room Photo 5">
-    <img src="/3share.jpeg" alt="PG Room Photo 6">
-  </div>
-</section>
+      <div class="prop-grid">
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="card">
-    <h2>Contact Us</h2>
-    <p><strong>Happy Home Boys PG</strong></p>
-    <p>📍 Navrangpura, Ahmedabad</p>
-    <p>📞 9636484074</p>
-    <p>📧 info@happyhomepg.com</p>
-    <a class="cta" href="tel:9636484074">Call Now</a>
-  </div>
-</section>
+        <!-- Card 1 -->
+        <a class="prop-card" href="#pg-happyhome-boys">
+          <div class="prop-photo">
+            <span class="gender-tag boys">Boys</span>
+            <img src="pg1.jpeg" alt="Happy Home Boys PG" loading="lazy" />
+          </div>
+          <div class="prop-body">
+            <h3>Happy Home Boys PG</h3>
+            <div class="prop-loc">📍 Navrangpura, Ahmedabad</div>
+            <div class="prop-cta">View details <span class="arrow">→</span></div>
+          </div>
+        </a>
 
+        <!-- Card 2 -->
+        <a class="prop-card" href="#pg-giriraj">
+          <div class="prop-photo">
+            <span class="gender-tag boys">Boys</span>
+            <svg class="dummy-illus" style="--accent:var(--mustard)" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="300" fill="#EDE4D0"/>
+              <rect x="0" y="220" width="400" height="80" fill="#D8CBA9"/>
+              <rect x="40" y="30" width="90" height="90" rx="4" fill="#BFD9E8" stroke="#1B2A4A" stroke-width="4"/>
+              <line x1="85" y1="30" x2="85" y2="120" stroke="#1B2A4A" stroke-width="4"/>
+              <line x1="40" y1="75" x2="130" y2="75" stroke="#1B2A4A" stroke-width="4"/>
+              <circle cx="150" cy="45" r="12" fill="var(--accent)"/>
+              <rect x="210" y="150" width="150" height="70" rx="8" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+              <rect x="210" y="150" width="150" height="20" rx="6" fill="var(--accent)"/>
+              <rect x="215" y="130" width="35" height="30" rx="6" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+              <rect x="215" y="220" width="8" height="18" fill="#1B2A4A"/>
+              <rect x="345" y="220" width="8" height="18" fill="#1B2A4A"/>
+              <rect x="40" y="180" width="110" height="10" fill="#1B2A4A"/>
+              <rect x="45" y="190" width="8" height="30" fill="#1B2A4A"/>
+              <rect x="135" y="190" width="8" height="30" fill="#1B2A4A"/>
+              <rect x="55" y="150" width="6" height="28" fill="#1B2A4A"/>
+              <path d="M45 150 L71 150 L64 132 L52 132 Z" fill="var(--accent)"/>
+              <rect x="90" y="165" width="30" height="8" fill="#6E8B6A"/>
+              <rect x="90" y="157" width="26" height="8" fill="#B5563C"/>
+              <circle cx="330" cy="55" r="20" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+              <line x1="330" y1="55" x2="330" y2="42" stroke="#1B2A4A" stroke-width="3"/>
+              <line x1="330" y1="55" x2="340" y2="55" stroke="#1B2A4A" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="prop-body">
+            <h3>Giriraj Boys PG</h3>
+            <div class="prop-loc">📍 Gulbai Tekra, off CG Road, Ahmedabad</div>
+            <div class="prop-cta">View details <span class="arrow">→</span></div>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a class="prop-card" href="#pg-happyhome-girls">
+          <div class="prop-photo">
+            <span class="gender-tag girls">Girls</span>
+            <svg class="dummy-illus" style="--accent:var(--clay)" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="300" fill="#EDE4D0"/>
+              <rect x="0" y="220" width="400" height="80" fill="#D8CBA9"/>
+              <rect x="40" y="30" width="90" height="90" rx="4" fill="#BFD9E8" stroke="#1B2A4A" stroke-width="4"/>
+              <line x1="85" y1="30" x2="85" y2="120" stroke="#1B2A4A" stroke-width="4"/>
+              <line x1="40" y1="75" x2="130" y2="75" stroke="#1B2A4A" stroke-width="4"/>
+              <circle cx="150" cy="45" r="12" fill="var(--accent)"/>
+              <rect x="210" y="150" width="150" height="70" rx="8" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+              <rect x="210" y="150" width="150" height="20" rx="6" fill="var(--accent)"/>
+              <rect x="215" y="130" width="35" height="30" rx="6" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+              <rect x="215" y="220" width="8" height="18" fill="#1B2A4A"/>
+              <rect x="345" y="220" width="8" height="18" fill="#1B2A4A"/>
+              <rect x="40" y="180" width="110" height="10" fill="#1B2A4A"/>
+              <rect x="45" y="190" width="8" height="30" fill="#1B2A4A"/>
+              <rect x="135" y="190" width="8" height="30" fill="#1B2A4A"/>
+              <rect x="55" y="150" width="6" height="28" fill="#1B2A4A"/>
+              <path d="M45 150 L71 150 L64 132 L52 132 Z" fill="var(--accent)"/>
+              <rect x="90" y="165" width="30" height="8" fill="#6E8B6A"/>
+              <rect x="90" y="157" width="26" height="8" fill="#E4A930"/>
+              <circle cx="330" cy="55" r="20" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+              <line x1="330" y1="55" x2="330" y2="42" stroke="#1B2A4A" stroke-width="3"/>
+              <line x1="330" y1="55" x2="340" y2="55" stroke="#1B2A4A" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="prop-body">
+            <h3>Happy Home Girls PG</h3>
+            <div class="prop-loc">📍 Mithakali Six Road, Navrangpura, Ahmedabad</div>
+            <div class="prop-cta">View details <span class="arrow">→</span></div>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a class="prop-card" href="#pg-liberty">
+          <div class="prop-photo">
+            <span class="gender-tag boys">Boys</span>
+            <svg class="dummy-illus" style="--accent:var(--sage)" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="300" fill="#EDE4D0"/>
+              <rect x="0" y="220" width="400" height="80" fill="#D8CBA9"/>
+              <rect x="40" y="30" width="90" height="90" rx="4" fill="#BFD9E8" stroke="#1B2A4A" stroke-width="4"/>
+              <line x1="85" y1="30" x2="85" y2="120" stroke="#1B2A4A" stroke-width="4"/>
+              <line x1="40" y1="75" x2="130" y2="75" stroke="#1B2A4A" stroke-width="4"/>
+              <circle cx="150" cy="45" r="12" fill="var(--accent)"/>
+              <rect x="210" y="150" width="150" height="70" rx="8" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+              <rect x="210" y="150" width="150" height="20" rx="6" fill="var(--accent)"/>
+              <rect x="215" y="130" width="35" height="30" rx="6" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+              <rect x="215" y="220" width="8" height="18" fill="#1B2A4A"/>
+              <rect x="345" y="220" width="8" height="18" fill="#1B2A4A"/>
+              <rect x="40" y="180" width="110" height="10" fill="#1B2A4A"/>
+              <rect x="45" y="190" width="8" height="30" fill="#1B2A4A"/>
+              <rect x="135" y="190" width="8" height="30" fill="#1B2A4A"/>
+              <rect x="55" y="150" width="6" height="28" fill="#1B2A4A"/>
+              <path d="M45 150 L71 150 L64 132 L52 132 Z" fill="var(--accent)"/>
+              <rect x="90" y="165" width="30" height="8" fill="#B5563C"/>
+              <rect x="90" y="157" width="26" height="8" fill="#E4A930"/>
+              <circle cx="330" cy="55" r="20" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+              <line x1="330" y1="55" x2="330" y2="42" stroke="#1B2A4A" stroke-width="3"/>
+              <line x1="330" y1="55" x2="340" y2="55" stroke="#1B2A4A" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="prop-body">
+            <h3>Liberty Boys PG</h3>
+            <div class="prop-loc">📍 Mithakali, Ahmedabad</div>
+            <div class="prop-cta">View details <span class="arrow">→</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span class="yr"></span> Happy Home PG Group • Ahmedabad</span>
+      <span>📞 <a href="tel:9636484074">9636484074</a> · 📧 <a href="mailto:info@happyhomepg.com">info@happyhomepg.com</a></span>
+    </div>
+  </footer>
 </main>
 
-<footer>
-© Happy Home Boys PG • Navrangpura, Ahmedabad
-</footer>
+<!-- ============ DETAIL: HAPPY HOME BOYS PG ============ -->
+<main id="view-pg-happyhome-boys" class="view">
+  <section class="detail-hero">
+    <div class="wrap">
+      <a class="btn btn-ghost" href="#home">← All PGs</a>
+      <h1>Happy Home Boys PG</h1>
+      <div class="detail-meta">
+        <span class="gender-tag boys">Boys</span>
+        <span>📍 Navrangpura, Ahmedabad</span>
+      </div>
+      <div class="detail-actions">
+        <a class="btn btn-whatsapp" href="https://wa.me/919636484074?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Happy%20Home%20Boys%20PG" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        <a class="btn btn-call" href="tel:9636484074">📞 Call 9636484074</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <span class="eyebrow">About</span>
+        <h2>A homely, disciplined stay — close to everything that matters.</h2>
+        <p>Happy Home Boys PG is designed to provide a homely and disciplined living environment for students and professionals coming to Ahmedabad. Located in the prime area of Navrangpura, we're close to colleges, metro stations, markets and major business areas.</p>
+        <p>Our focus is on cleanliness, healthy food, safety and comfort — so residents can concentrate on studies and work without worries.</p>
+      </div>
+      <div class="about-photo">
+        <img src="2share.jpeg" alt="Common living space at Happy Home Boys PG" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="rooms">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Room Options</span>
+        <h2>Pick the room that fits you</h2>
+        <p>Every room comes with the same homely essentials — just choose your privacy level and budget. Call or WhatsApp for current rates and availability.</p>
+      </div>
+      <div class="room-grid">
+        <div class="keytag">
+          <div class="hole"></div>
+          <img src="1share.jpeg" alt="Single occupancy room" loading="lazy" />
+          <div class="label">Room 01</div>
+          <h3>Single Occupancy</h3>
+          <p>Ideal for students who prefer privacy and a quiet space to study.</p>
+        </div>
+        <div class="keytag">
+          <div class="hole"></div>
+          <img src="2share.jpeg" alt="Double sharing room" loading="lazy" />
+          <div class="label">Room 02</div>
+          <h3>Double Sharing</h3>
+          <p>Comfortable and economical — great for friends or classmates.</p>
+        </div>
+        <div class="keytag">
+          <div class="hole"></div>
+          <img src="3share.jpeg" alt="Triple sharing room" loading="lazy" />
+          <div class="label">Room 03</div>
+          <h3>Triple Sharing</h3>
+          <p>Budget-friendly rooms with all essential facilities included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="facilities">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Facilities</span>
+        <h2>Everything you need, taken care of</h2>
+      </div>
+      <div class="fac-grid">
+        <div class="fac-card">
+          <h3>🍲 Food &amp; Living</h3>
+          <ul><li>3-time home-style meals</li><li>RO drinking water</li><li>Daily housekeeping</li></ul>
+        </div>
+        <div class="fac-card">
+          <h3>📶 Connectivity</h3>
+          <ul><li>Unlimited high-speed Wi-Fi</li><li>Near metro &amp; bus routes</li><li>Close to colleges</li></ul>
+        </div>
+        <div class="fac-card">
+          <h3>🔒 Safety</h3>
+          <ul><li>24×7 security</li><li>Safe &amp; disciplined environment</li><li>Power backup</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Gallery</span>
+        <h2>A peek inside</h2>
+        <p>Real rooms, real spaces — see where you'll be staying.</p>
+      </div>
+      <div class="gal-grid">
+        <img src="1share.jpeg" alt="PG room photo 1" loading="lazy" />
+        <img src="2share.jpeg" alt="PG room photo 2" loading="lazy" />
+        <img src="3share.jpeg" alt="PG room photo 3" loading="lazy" />
+        <img src="pg1.jpeg" alt="PG room photo 4" loading="lazy" />
+        <img src="1share.jpeg" alt="PG room photo 5" loading="lazy" />
+        <img src="2share.jpeg" alt="PG room photo 6" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-card">
+        <span class="eyebrow">Contact</span>
+        <h2 style="font-size:1.6rem;color:var(--indigo-deep);margin-top:.3em;">Happy Home Boys PG</h2>
+        <div class="contact-row" style="margin-top:20px;"><span class="ico">📍</span><span>Navrangpura, Ahmedabad</span></div>
+        <div class="contact-row"><span class="ico">📞</span><a href="tel:9636484074">9636484074</a></div>
+        <div class="contact-row"><span class="ico">📧</span><a href="mailto:info@happyhomepg.com">info@happyhomepg.com</a></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;">
+          <a class="btn btn-whatsapp" href="https://wa.me/919636484074?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Happy%20Home%20Boys%20PG" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="btn btn-call" href="tel:9636484074">📞 Call Now</a>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=Navrangpura,+Ahmedabad,+Gujarat&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Navrangpura, Ahmedabad"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="btn btn-ghost" href="#home">← Back to all PGs</a>
+      <span>© <span class="yr"></span> Happy Home PG Group</span>
+    </div>
+  </footer>
+</main>
+
+<!-- ============ DETAIL: GIRIRAJ BOYS PG ============ -->
+<main id="view-pg-giriraj" class="view">
+  <section class="detail-hero">
+    <div class="wrap">
+      <a class="btn btn-ghost" href="#home">← All PGs</a>
+      <h1>Giriraj Boys PG</h1>
+      <div class="detail-meta">
+        <span class="gender-tag boys">Boys</span>
+        <span>📍 Gulbai Tekra, off CG Road, Ahmedabad</span>
+      </div>
+      <div class="detail-actions">
+        <a class="btn btn-whatsapp" href="https://wa.me/919636484074?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Giriraj%20Boys%20PG" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        <a class="btn btn-call" href="tel:9636484074">📞 Call 9636484074</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap">
+      <div class="placeholder-note">📝 Placeholder content — photos are dummy illustrations and facilities are unconfirmed. Send real photos, exact address and facility list to replace these.</div>
+    </div>
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <span class="eyebrow">About</span>
+        <h2>A comfortable PG in Gulbai Tekra, off CG Road</h2>
+        <p>Giriraj Boys PG offers a safe and convenient stay just off CG Road in Gulbai Tekra — close to Ahmedabad's business and shopping hub, with easy access to the rest of the city.</p>
+      </div>
+      <div class="about-photo">
+        <svg class="dummy-illus" style="--accent:var(--mustard)" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#EDE4D0"/><rect x="0" y="220" width="400" height="80" fill="#D8CBA9"/>
+          <rect x="40" y="30" width="90" height="90" rx="4" fill="#BFD9E8" stroke="#1B2A4A" stroke-width="4"/>
+          <line x1="85" y1="30" x2="85" y2="120" stroke="#1B2A4A" stroke-width="4"/><line x1="40" y1="75" x2="130" y2="75" stroke="#1B2A4A" stroke-width="4"/>
+          <circle cx="150" cy="45" r="12" fill="var(--accent)"/>
+          <rect x="210" y="150" width="150" height="70" rx="8" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+          <rect x="210" y="150" width="150" height="20" rx="6" fill="var(--accent)"/>
+          <rect x="215" y="130" width="35" height="30" rx="6" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+          <rect x="215" y="220" width="8" height="18" fill="#1B2A4A"/><rect x="345" y="220" width="8" height="18" fill="#1B2A4A"/>
+          <rect x="40" y="180" width="110" height="10" fill="#1B2A4A"/><rect x="45" y="190" width="8" height="30" fill="#1B2A4A"/><rect x="135" y="190" width="8" height="30" fill="#1B2A4A"/>
+          <rect x="55" y="150" width="6" height="28" fill="#1B2A4A"/><path d="M45 150 L71 150 L64 132 L52 132 Z" fill="var(--accent)"/>
+          <rect x="90" y="165" width="30" height="8" fill="#6E8B6A"/><rect x="90" y="157" width="26" height="8" fill="#B5563C"/>
+          <circle cx="330" cy="55" r="20" fill="#fff" stroke="#1B2A4A" stroke-width="4"/><line x1="330" y1="55" x2="330" y2="42" stroke="#1B2A4A" stroke-width="3"/><line x1="330" y1="55" x2="340" y2="55" stroke="#1B2A4A" stroke-width="3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="facilities">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Facilities</span><h2>What's included</h2></div>
+      <div class="fac-grid">
+        <div class="fac-card"><h3>🍲 Food &amp; Living</h3><p class="tbc">Details coming soon — call or WhatsApp for the full list.</p></div>
+        <div class="fac-card"><h3>📶 Connectivity</h3><p class="tbc">Details coming soon — call or WhatsApp for the full list.</p></div>
+        <div class="fac-card"><h3>🔒 Safety</h3><p class="tbc">Details coming soon — call or WhatsApp for the full list.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-card">
+        <span class="eyebrow">Contact</span>
+        <h2 style="font-size:1.6rem;color:var(--indigo-deep);margin-top:.3em;">Giriraj Boys PG</h2>
+        <div class="contact-row" style="margin-top:20px;"><span class="ico">📍</span><span>Gulbai Tekra, off CG Road, Ahmedabad</span></div>
+        <div class="contact-row"><span class="ico">📞</span><a href="tel:9636484074">9636484074</a></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;">
+          <a class="btn btn-whatsapp" href="https://wa.me/919636484074?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Giriraj%20Boys%20PG" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="btn btn-call" href="tel:9636484074">📞 Call Now</a>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=23.0297409,72.5535956&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Giriraj Boys PG"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="btn btn-ghost" href="#home">← Back to all PGs</a>
+      <span>© <span class="yr"></span> Happy Home PG Group</span>
+    </div>
+  </footer>
+</main>
+
+<!-- ============ DETAIL: HAPPY HOME GIRLS PG ============ -->
+<main id="view-pg-happyhome-girls" class="view">
+  <section class="detail-hero">
+    <div class="wrap">
+      <a class="btn btn-ghost" href="#home">← All PGs</a>
+      <h1>Happy Home Girls PG</h1>
+      <div class="detail-meta">
+        <span class="gender-tag girls">Girls</span>
+        <span>📍 Mithakali Six Road, Navrangpura, Ahmedabad</span>
+      </div>
+      <div class="detail-actions">
+        <a class="btn btn-whatsapp" href="https://wa.me/919636484074?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Happy%20Home%20Girls%20PG" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        <a class="btn btn-call" href="tel:9636484074">📞 Call 9636484074</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap">
+      <div class="placeholder-note">📝 Placeholder content — photos are dummy illustrations and facilities are unconfirmed. Send real photos, exact address and facility list to replace these.</div>
+    </div>
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <span class="eyebrow">About</span>
+        <h2>A safe, homely PG for girls near Mithakali Six Road</h2>
+        <p>Happy Home Girls PG offers a secure and comfortable stay for students and working women, located near Mithakali Six Road in Navrangpura — close to colleges, offices and the city centre.</p>
+      </div>
+      <div class="about-photo">
+        <svg class="dummy-illus" style="--accent:var(--clay)" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#EDE4D0"/><rect x="0" y="220" width="400" height="80" fill="#D8CBA9"/>
+          <rect x="40" y="30" width="90" height="90" rx="4" fill="#BFD9E8" stroke="#1B2A4A" stroke-width="4"/>
+          <line x1="85" y1="30" x2="85" y2="120" stroke="#1B2A4A" stroke-width="4"/><line x1="40" y1="75" x2="130" y2="75" stroke="#1B2A4A" stroke-width="4"/>
+          <circle cx="150" cy="45" r="12" fill="var(--accent)"/>
+          <rect x="210" y="150" width="150" height="70" rx="8" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+          <rect x="210" y="150" width="150" height="20" rx="6" fill="var(--accent)"/>
+          <rect x="215" y="130" width="35" height="30" rx="6" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+          <rect x="215" y="220" width="8" height="18" fill="#1B2A4A"/><rect x="345" y="220" width="8" height="18" fill="#1B2A4A"/>
+          <rect x="40" y="180" width="110" height="10" fill="#1B2A4A"/><rect x="45" y="190" width="8" height="30" fill="#1B2A4A"/><rect x="135" y="190" width="8" height="30" fill="#1B2A4A"/>
+          <rect x="55" y="150" width="6" height="28" fill="#1B2A4A"/><path d="M45 150 L71 150 L64 132 L52 132 Z" fill="var(--accent)"/>
+          <rect x="90" y="165" width="30" height="8" fill="#6E8B6A"/><rect x="90" y="157" width="26" height="8" fill="#E4A930"/>
+          <circle cx="330" cy="55" r="20" fill="#fff" stroke="#1B2A4A" stroke-width="4"/><line x1="330" y1="55" x2="330" y2="42" stroke="#1B2A4A" stroke-width="3"/><line x1="330" y1="55" x2="340" y2="55" stroke="#1B2A4A" stroke-width="3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="facilities">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Facilities</span><h2>What's included</h2></div>
+      <div class="fac-grid">
+        <div class="fac-card"><h3>🍲 Food &amp; Living</h3><p class="tbc">Details coming soon — call or WhatsApp for the full list.</p></div>
+        <div class="fac-card"><h3>📶 Connectivity</h3><p class="tbc">Details coming soon — call or WhatsApp for the full list.</p></div>
+        <div class="fac-card"><h3>🔒 Safety</h3><p class="tbc">Details coming soon — call or WhatsApp for the full list.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-card">
+        <span class="eyebrow">Contact</span>
+        <h2 style="font-size:1.6rem;color:var(--indigo-deep);margin-top:.3em;">Happy Home Girls PG</h2>
+        <div class="contact-row" style="margin-top:20px;"><span class="ico">📍</span><span>Mithakali Six Road, Navrangpura, Ahmedabad</span></div>
+        <div class="contact-row"><span class="ico">📞</span><a href="tel:9636484074">9636484074</a></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;">
+          <a class="btn btn-whatsapp" href="https://wa.me/919636484074?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Happy%20Home%20Girls%20PG" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="btn btn-call" href="tel:9636484074">📞 Call Now</a>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=23.0304229,72.5643265&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Happy Home Girls PG"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="btn btn-ghost" href="#home">← Back to all PGs</a>
+      <span>© <span class="yr"></span> Happy Home PG Group</span>
+    </div>
+  </footer>
+</main>
+
+<!-- ============ DETAIL: LIBERTY BOYS PG ============ -->
+<main id="view-pg-liberty" class="view">
+  <section class="detail-hero">
+    <div class="wrap">
+      <a class="btn btn-ghost" href="#home">← All PGs</a>
+      <h1>Liberty Boys PG</h1>
+      <div class="detail-meta">
+        <span class="gender-tag boys">Boys</span>
+        <span>📍 Mithakali, Ahmedabad</span>
+      </div>
+      <div class="detail-actions">
+        <a class="btn btn-whatsapp" href="https://wa.me/919636484074?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Liberty%20Boys%20PG" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        <a class="btn btn-call" href="tel:9636484074">📞 Call 9636484074</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap">
+      <div class="placeholder-note">📝 Placeholder content — photos are dummy illustrations and facilities are unconfirmed. Send real photos, exact address and facility list to replace these.</div>
+    </div>
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <span class="eyebrow">About</span>
+        <h2>An affordable PG in the heart of Mithakali</h2>
+        <p>Liberty Boys PG offers a budget-friendly stay in Mithakali, Ahmedabad — well connected to CG Road, Navrangpura and the rest of the city.</p>
+      </div>
+      <div class="about-photo">
+        <svg class="dummy-illus" style="--accent:var(--sage)" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#EDE4D0"/><rect x="0" y="220" width="400" height="80" fill="#D8CBA9"/>
+          <rect x="40" y="30" width="90" height="90" rx="4" fill="#BFD9E8" stroke="#1B2A4A" stroke-width="4"/>
+          <line x1="85" y1="30" x2="85" y2="120" stroke="#1B2A4A" stroke-width="4"/><line x1="40" y1="75" x2="130" y2="75" stroke="#1B2A4A" stroke-width="4"/>
+          <circle cx="150" cy="45" r="12" fill="var(--accent)"/>
+          <rect x="210" y="150" width="150" height="70" rx="8" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+          <rect x="210" y="150" width="150" height="20" rx="6" fill="var(--accent)"/>
+          <rect x="215" y="130" width="35" height="30" rx="6" fill="#fff" stroke="#1B2A4A" stroke-width="4"/>
+          <rect x="215" y="220" width="8" height="18" fill="#1B2A4A"/><rect x="345" y="220" width="8" height="18" fill="#1B2A4A"/>
+          <rect x="40" y="180" width="110" height="10" fill="#1B2A4A"/><rect x="45" y="190" width="8" height="30" fill="#1B2A4A"/><rect x="135" y="190" width="8" height="30" fill="#1B2A4A"/>
+          <rect x="55" y="150" width="6" height="28" fill="#1B2A4A"/><path d="M45 150 L71 150 L64 132 L52 132 Z" fill="var(--accent)"/>
+          <rect x="90" y="165" width="30" height="8" fill="#B5563C"/><rect x="90" y="157" width="26" height="8" fill="#E4A930"/>
+          <circle cx="330" cy="55" r="20" fill="#fff" stroke="#1B2A4A" stroke-width="4"/><line x1="330" y1="55" x2="330" y2="42" stroke="#1B2A4A" stroke-width="3"/><line x1="330" y1="55" x2="340" y2="55" stroke="#1B2A4A" stroke-width="3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="facilities">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Facilities</span><h2>What's included</h2></div>
+      <div class="fac-grid">
+        <div class="fac-card"><h3>🍲 Food &amp; Living</h3><p class="tbc">Details coming soon — call or WhatsApp for the full list.</p></div>
+        <div class="fac-card"><h3>📶 Connectivity</h3><p class="tbc">Details coming soon — call or WhatsApp for the full list.</p></div>
+        <div class="fac-card"><h3>🔒 Safety</h3><p class="tbc">Details coming soon — call or WhatsApp for the full list.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-card">
+        <span class="eyebrow">Contact</span>
+        <h2 style="font-size:1.6rem;color:var(--indigo-deep);margin-top:.3em;">Liberty Boys PG</h2>
+        <div class="contact-row" style="margin-top:20px;"><span class="ico">📍</span><span>Mithakali, Ahmedabad</span></div>
+        <div class="contact-row"><span class="ico">📞</span><a href="tel:9636484074">9636484074</a></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;">
+          <a class="btn btn-whatsapp" href="https://wa.me/919636484074?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Liberty%20Boys%20PG" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="btn btn-call" href="tel:9636484074">📞 Call Now</a>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=23.0304753,72.5638728&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Liberty Boys PG"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="btn btn-ghost" href="#home">← Back to all PGs</a>
+      <span>© <span class="yr"></span> Happy Home PG Group</span>
+    </div>
+  </footer>
+</main>
+
+<a class="float-whatsapp" href="https://wa.me/919636484074" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+  document.querySelectorAll('.yr').forEach(function(el){ el.textContent = new Date().getFullYear(); });
+
+  function showView(hash){
+    var id = (hash || '').replace('#','') || 'home';
+    var target = document.getElementById('view-' + id);
+    document.querySelectorAll('.view').forEach(function(el){ el.classList.remove('active'); });
+    (target || document.getElementById('view-home')).classList.add('active');
+    window.scrollTo({top:0, behavior:'instant'});
+  }
+  window.addEventListener('hashchange', function(){ showView(location.hash); });
+  showView(location.hash);
+</script>
 
 </body>
 </html>
